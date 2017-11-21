@@ -7,6 +7,6 @@ const app = express();
 
 app.use(express.static(publicPath));
 
-app.listen(3000,function(){
+app.listen(port,function(){
     console.log(`Server is up on ${port}`);
 });
