@@ -2,6 +2,7 @@
 
 ## Summary
 A chat application where users can send messages to each other.
+Users can share their current location once.
 Users can also send private messages by joining a particular room.
 
  
