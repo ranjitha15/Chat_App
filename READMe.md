@@ -7,7 +7,9 @@ Users can also send private messages by joining a particular room.
 
  
 ## Technologies
-Node.js Express & Moustache.js
+* Node.js 
+* Express
+* Moustache.js
 
-## Live Demo
-https://peaceful-plains-62020.herokuapp.com/
+## Project Demo
+<a href = "https://peaceful-plains-62020.herokuapp.com/"> Click here for Demo </a>
