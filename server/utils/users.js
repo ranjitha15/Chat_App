@@ -15,12 +15,12 @@ class Users {
     constructor () {
         this.users = [];
     } //initialize instance of your class
-    addUSer(id,name,room){
+    addUser(id,name,room){
         var user = {id,name,room};
         this.users.push(user);
         return user;
     }
-    removerUser(id){
+    removeUser(id){
       //return user that was removed
         var user = this.getUser(id);
         if(user){
