@@ -12,16 +12,18 @@ var io = socketIO(server);
 app.use(express.static(publicPath));
 io.on('connection',(socket)=>{
     console.log("New user connected");
-//--Welcome message from admin to the new user--//
-    socket.emit('newMessage',generateMessage('Admin',"Welcome to the Chat room"));
 
-//--Informing other users that a new user has joined--//
-    socket.broadcast.emit('newMessage',generateMessage('Admin',"New user has joined"));
 
     socket.on('join',(params,callback)=>{
         if(!isRealString(params.name) || !isRealString(params.room)){
             callback("Name and room name are required");
         }
+        socket.join(params.room); //Join a particular room
+        //--Welcome message from admin to the new user--//
+            socket.emit('newMessage',generateMessage('Admin',"Welcome to the Chat room"));
+
+        //--Informing other users that a new user has joined--//
+            socket.broadcast.to(params.room).emit('newMessage',generateMessage('Admin',`${params.name} has joined`));
         callback();
     });
 //--Standard Event Listener--//
